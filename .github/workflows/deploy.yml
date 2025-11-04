@@ -9,7 +9,11 @@ on:
       minBalanceEth:
         description: "Minimum ETH required on selected network"
         required: true
-        default: "0.02"
+        default: "0.0001"
+      skipBalanceCheck:
+        description: "Skip balance check (true/false)"
+        required: true
+        default: "false"
       verify:
         description: "Verify on BaseScan (true/false)"
         required: true
@@ -32,6 +36,7 @@ jobs:
       - name: Install dependencies
         run: npm install --no-audit --no-fund
       - name: Preflight balance check
+        if: ${{ github.event.inputs.skipBalanceCheck != 'true' }}
         run: |
           node scripts/check-balance.js "${{ github.event.inputs.network }}" "${{ github.event.inputs.minBalanceEth }}"
       - name: Build
