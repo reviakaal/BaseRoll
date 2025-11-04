@@ -1,5 +1,4 @@
 name: Deploy BaseRoll
-
 on:
   workflow_dispatch:
     inputs:
@@ -11,32 +10,26 @@ on:
         description: "Verify on BaseScan (true/false)"
         required: true
         default: "true"
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     env:
       PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
       BASE_MAINNET_RPC_URL: ${{ secrets.BASE_MAINNET_RPC_URL }}
       BASE_SEPOLIA_RPC_URL: ${{ secrets.BASE_SEPOLIA_RPC_URL }}
       BASESCAN_API_KEY: ${{ secrets.BASESCAN_API_KEY }}
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Use Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-
+          cache: "npm"
       - name: Install dependencies
-        run: npm ci
-
+        run: npm install --no-audit --no-fund
       - name: Build
         run: npm run build --if-present
-
       - name: Deploy
         run: |
           if [ "${{ github.event.inputs.network }}" = "base" ]; then
@@ -44,10 +37,8 @@ jobs:
           else
             npx hardhat run scripts/deploy.js --network baseSepolia
           fi
-
       - name: Print Proxy & Impl from logs
         run: echo "Deployment done. See previous step for addresses."
-
       - name: Verify (implementation)
         if: ${{ github.event.inputs.verify == 'true' }}
         run: |
