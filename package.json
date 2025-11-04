@@ -1,0 +1,25 @@
+{
+  "name": "baseroll",
+  "version": "0.1.0",
+  "private": true,
+  "description": "BaseRoll \u2014 demo payroll with UUPS proxy on Base (mainnet/testnet).",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "echo \"No build step\"",
+    "install": "echo \"Ensuring deps\" && npm ci || true",
+    "test": "hardhat test",
+    "deploy:sepolia": "hardhat run scripts/deploy.js --network baseSepolia",
+    "deploy:base": "hardhat run scripts/deploy.js --network base",
+    "upgrade:sepolia": "hardhat run scripts/upgrade.js --network baseSepolia",
+    "upgrade:base": "hardhat run scripts/upgrade.js --network base",
+    "verify:sepolia": "echo 'Use: npx hardhat verify --network baseSepolia <IMPLEMENTATION_ADDRESS>'",
+    "verify:base": "echo 'Use: npx hardhat verify --network base <IMPLEMENTATION_ADDRESS>'"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@openzeppelin/contracts-upgradeable": "^5.0.2",
+    "@openzeppelin/hardhat-upgrades": "^3.2.0",
+    "dotenv": "^16.4.5",
+    "hardhat": "^2.22.5"
+  }
+}
