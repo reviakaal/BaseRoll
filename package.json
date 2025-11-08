@@ -2,7 +2,7 @@
   "name": "baseroll",
   "version": "0.1.0",
   "private": true,
-  "description": "BaseRoll — demo payroll with UUPS proxy on Base (mainnet/testnet).",
+  "description": "Automated on-chain payroll system managing recurring ETH and token payouts through upgradeable smart contracts on Base.",
   "license": "MIT",
   "scripts": {
     "prepare": "echo \"No build step\"",
@@ -20,5 +20,11 @@
     "@openzeppelin/hardhat-upgrades": "^3.2.0",
     "dotenv": "^16.4.5",
     "hardhat": "^2.22.5"
+  },
+  "dependencies": {
+    "@coinbase/onchainkit": "*",
+    "@coinbase/cbpay-js": "*",
+    "wagmi": "*",
+    "viem": "*"
   }
 }
