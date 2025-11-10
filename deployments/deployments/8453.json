@@ -1,0 +1,10 @@
+{
+  "network": "base-mainnet",
+  "chainId": 8453,
+  "date": "2025-11-04",
+  "deployer": "0x537AA372cE8367b1A998EBaA16aE4574EA006f00",
+  "proxy": "0x7010E82298Aa3D56DAA9d9433f315B1E978dC10E",
+  "implementation": "0x99b907FB53cb5391cc1ACe5AA7314170FE64de86",
+  "verification": "pending",
+  "workflow": "Deploy BaseRoll (base)"
+}
