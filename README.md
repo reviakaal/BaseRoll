@@ -68,8 +68,3 @@ All sensitive data are stored in **GitHub Actions secrets** — never exposed in
 
 ## 📄 License
 This project is licensed under the **MIT License** — see [`LICENSE`](./LICENSE) for details.
-
----
-
-## 🪶 Ecosystem Tags
-`base` `base-pay` `coinbase-base` `uups` `openzeppelin-upgrades` `payroll` `smart-contracts` `usdc` `onchain` `solidity` `github-actions` `builder` `electric-capital`
