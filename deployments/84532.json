@@ -1,0 +1,10 @@
+{
+  "network": "base-sepolia",
+  "chainId": 84532,
+  "date": "2025-11-04",
+  "deployer": "0x537AA372cE8367b1A998EBaA16aE4574EA006f00",
+  "proxy": "0xb1dc73B708876ce13b7a91C77df6f634FC89a87e",
+  "implementation": "0x2aDA47bFC833d5B90540dfb5009414Ac5eF6bb36D",
+  "verification": "pending",
+  "workflow": "Deploy BaseRoll (baseSepolia)"
+}
